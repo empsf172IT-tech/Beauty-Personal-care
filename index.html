@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUMIÈRE | Premium Beauty & Skincare</title>
+    <title>Lumière | Premium Beauty & Skincare</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -47,7 +47,7 @@
                 Lumière
             </a>
 
-            <nav class="hidden md:flex gap-8 text-sm uppercase tracking-wider font-medium">
+            <nav class="hidden lg:flex gap-8 text-sm uppercase tracking-wider font-medium">
                 <a href="index.html"
                     class="text-black dark:text-white border-b-2 border-black dark:border-white">Home</a>
                 <a href="shop.html"
@@ -57,36 +57,69 @@
                 <a href="dashboard.html"
                     class="text-gray-500 hover:text-black dark:hover:text-white transition-colors">Dashboard</a>
             </nav>
+        
 
             <div class="flex items-center gap-6">
-                <button id="theme-toggle" class="hover:opacity-70 transition-opacity">
-                    <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
-                        </path>
-                    </svg>
-                    <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
-                        </path>
+                <button class="mobile-menu-btn lg:hidden hover:opacity-70 transition-opacity">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
-                <a href="cart.html" class="relative hover:opacity-70 transition-opacity">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
-                    </svg>
-                    <span
-                        class="absolute -top-2 -right-2 bg-black dark:bg-white text-white dark:text-black text-[10px] w-4 h-4 flex items-center justify-center rounded-full cart-count">0</span>
-                </a>
+                <div class="hidden lg:flex items-center gap-6">
+                    <button class="theme-toggle hover:opacity-70 transition-opacity">
+                        <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                        <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </button>
+                    <a href="cart.html" class="relative hover:opacity-70 transition-opacity">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                        <span class="absolute -top-2 -right-2 bg-black dark:bg-white text-white dark:text-black text-[10px] w-4 h-4 flex items-center justify-center rounded-full cart-count">0</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
+        </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu hidden fixed inset-0 z-[60] bg-white dark:bg-black flex flex-col justify-center items-center">
+        <button class="mobile-menu-close absolute top-6 right-6 hover:opacity-70 transition-opacity">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <nav class="flex flex-col gap-8 text-center text-2xl font-serif tracking-wide">
+            <a href="index.html" class="hover:text-gray-500 transition-colors">Home</a>
+            <a href="shop.html" class="hover:text-gray-500 transition-colors">Shop</a>
+            <a href="rituals.html" class="hover:text-gray-500 transition-colors">Beauty Rituals</a>
+            <a href="dashboard.html" class="hover:text-gray-500 transition-colors">Dashboard</a>
+        </nav>
+        <div class="flex items-center gap-8 mt-12 border-t border-gray-200 dark:border-gray-800 pt-8 px-12">
+            <button class="theme-toggle hover:opacity-70 transition-opacity">
+                <svg class="w-6 h-6 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+                <svg class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+            </button>
+            <a href="cart.html" class="relative hover:opacity-70 transition-opacity">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                </svg>
+                <span class="absolute -top-2 -right-2 bg-black dark:bg-white text-white dark:text-black text-[10px] w-5 h-5 flex items-center justify-center rounded-full cart-count font-medium">0</span>
+            </a>
+        </div>
+    </div>
 
     <main class="pt-20">
         <!-- Section 1: Premium Beauty Hero -->
         <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
-            <img src="https://images.pexels.com/photos/32709978/pexels-photo-32709978.jpeg" alt="Lumiere Skincare"
+            <img src="https://images.pexels.com/photos/32709978/pexels-photo-32709978.jpeg" alt="Lumière Skincare"
                 class="absolute inset-0 w-full h-full object-cover animate-image-zoom">
             <div class="absolute inset-0 bg-black/30 dark:bg-black/50"></div>
             <div class="relative z-10 text-center text-white max-w-3xl px-6 animate-fade-up">
@@ -254,19 +287,22 @@
             <div class="max-w-7xl mx-auto px-6 text-center">
                 <h2 class="font-serif text-3xl mb-16">Acclaimed by the Best</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div class="px-4 flex flex-col h-full">
+                    <div class="px-4 flex flex-col h-full items-center">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150" alt="Reviewer Profile" class="w-16 h-16 rounded-full object-cover mb-6 shadow-md border-2 border-white dark:border-gray-800">
                         <p class="text-yellow-500 mb-4 text-sm">★★★★★</p>
                         <p class="font-serif text-lg mb-6">"The Radiance Face Oil has completely transformed my
                             complexion. It's liquid gold."</p>
                         <p class="text-xs uppercase tracking-widest text-gray-500 font-medium mt-auto">— Vogue Magazine</p>
                     </div>
-                    <div class="px-4 flex flex-col h-full">
+                    <div class="px-4 flex flex-col h-full items-center">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150&h=150" alt="Reviewer Profile" class="w-16 h-16 rounded-full object-cover mb-6 shadow-md border-2 border-white dark:border-gray-800">
                         <p class="text-yellow-500 mb-4 text-sm">★★★★★</p>
                         <p class="font-serif text-lg mb-6">"Finally, a brand that understands luxury without
                             compromising on clean ingredients."</p>
                         <p class="text-xs uppercase tracking-widest text-gray-500 font-medium mt-auto">— Harper's Bazaar</p>
                     </div>
-                    <div class="px-4 flex flex-col h-full">
+                    <div class="px-4 flex flex-col h-full items-center">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150&h=150" alt="Reviewer Profile" class="w-16 h-16 rounded-full object-cover mb-6 shadow-md border-2 border-white dark:border-gray-800">
                         <p class="text-yellow-500 mb-4 text-sm">★★★★★</p>
                         <p class="font-serif text-lg mb-6">"Lumière's Night Serum is an absolute essential in any
                             serious skincare routine."</p>
@@ -280,7 +316,7 @@
         <section class="py-24 bg-white dark:bg-black">
             <div class="text-center mb-12">
                 <h2 class="font-serif text-3xl mb-4">Join the Lumière Community</h2>
-                <p class="text-gray-500 dark:text-gray-400">@lumierebeauty</p>
+                <p class="text-gray-500 dark:text-gray-400">@Lumièrebeauty</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-1">
                 <a href="#" class="group relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
@@ -408,3 +444,9 @@
 </body>
 
 </html>
+
+
+
+
+
+

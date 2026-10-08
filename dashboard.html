@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Tracking | LUMIÈRE Beauty</title>
+    <title>Order Tracking | Lumière Beauty</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -41,34 +41,39 @@
             </a>
             
             <div class="flex items-center gap-6">
-                <div class="flex items-center gap-3">
+                <button class="theme-toggle hover:opacity-70 transition-opacity">
+                    <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                    <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                </button>
+                <div class="hidden lg:flex items-center gap-3">
                     <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-base font-serif">
                         E
                     </div>
-                    <div class="hidden sm:block">
+                    <div class="hidden sm:block text-left">
                         <p class="text-sm font-medium leading-tight">Eleanor V.</p>
                         <p class="text-[10px] uppercase tracking-wider text-gray-500">Premium Member</p>
                     </div>
                 </div>
-                <div class="hidden sm:block w-px h-8 bg-gray-200 dark:bg-gray-800"></div>
-                <button id="theme-toggle" class="hover:opacity-70 transition-opacity">
-                    <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                    <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                </button>
             </div>
         </div>
     </header>
 
-    <div class="pt-24 pb-24 max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-8 items-start">
+
+    <div class="pt-24 pb-24 max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-8 items-start">
         
         <!-- Dashboard Sidebar Navigation -->
-        <aside class="w-full md:w-64 shrink-0 mb-8 md:mb-0 md:sticky md:top-32">
-            <nav class="flex flex-col gap-2" id="dashboard-nav">
-                <a href="#overview" data-tab="tab-overview" class="tab-link px-4 py-3 bg-white dark:bg-black font-medium text-sm border-l-2 border-black dark:border-white shadow-sm">Overview</a>
-                <a href="#orders" data-tab="tab-orders" class="tab-link px-4 py-3 text-gray-500 hover:text-black dark:hover:text-white text-sm transition-colors border-l-2 border-transparent">My Orders</a>
-                <a href="#wishlist" data-tab="tab-wishlist" class="tab-link px-4 py-3 text-gray-500 hover:text-black dark:hover:text-white text-sm transition-colors border-l-2 border-transparent">Wishlist</a>
-                <a href="#profile" data-tab="tab-profile" class="tab-link px-4 py-3 text-gray-500 hover:text-black dark:hover:text-white text-sm transition-colors mb-6 border-l-2 border-transparent">Profile & Settings</a>
-                <a href="index.html" class="px-4 py-3 text-gray-500 hover:text-black dark:hover:text-white text-sm transition-colors border-t border-gray-200 dark:border-gray-800">Logout</a>
+        <aside class="w-full lg:w-64 shrink-0 mb-8 lg:mb-0 lg:sticky lg:top-32">
+            <nav class="flex lg:flex-col overflow-x-auto gap-4 lg:gap-2 pb-0 border-b border-gray-200 dark:border-gray-800 lg:border-b-0" style="scrollbar-width: none;" id="dashboard-nav">
+                <style>#dashboard-nav::-webkit-scrollbar { display: none; }</style>
+                <a href="#overview" data-tab="tab-overview" class="tab-link whitespace-nowrap shrink-0 px-2 lg:px-4 py-3 lg:bg-white lg:dark:bg-black font-medium text-sm border-b-2 lg:border-b-0 lg:border-l-2 border-black dark:border-white lg:shadow-sm text-black dark:text-white -mb-px lg:mb-0">Overview</a>
+                <a href="#orders" data-tab="tab-orders" class="tab-link whitespace-nowrap shrink-0 px-2 lg:px-4 py-3 text-gray-500 hover:text-black dark:hover:text-white text-sm transition-colors border-b-2 lg:border-b-0 lg:border-l-2 border-transparent -mb-px lg:mb-0">My Orders</a>
+                <a href="#wishlist" data-tab="tab-wishlist" class="tab-link whitespace-nowrap shrink-0 px-2 lg:px-4 py-3 text-gray-500 hover:text-black dark:hover:text-white text-sm transition-colors border-b-2 lg:border-b-0 lg:border-l-2 border-transparent -mb-px lg:mb-0">Wishlist</a>
+                <a href="#profile" data-tab="tab-profile" class="tab-link whitespace-nowrap shrink-0 px-2 lg:px-4 py-3 text-gray-500 hover:text-black dark:hover:text-white text-sm transition-colors border-b-2 lg:border-b-0 lg:border-l-2 border-transparent -mb-px lg:mb-0">Profile & Settings</a>
+                <a href="index.html" class="whitespace-nowrap shrink-0 px-2 lg:px-4 py-3 text-gray-500 hover:text-black dark:hover:text-white text-sm transition-colors lg:border-t border-gray-200 dark:border-gray-800 lg:mt-4 flex items-center">Logout</a>
             </nav>
         </aside>
 
@@ -121,30 +126,33 @@
                 </div>
 
                 <!-- Tracking Timeline -->
-                <div class="relative pt-8 pb-4">
-                    <div class="absolute top-10 left-0 w-full h-0.5 bg-gray-200 dark:bg-gray-700"></div>
-                    <div class="absolute top-10 left-0 w-2/5 h-0.5 bg-black dark:bg-white animate-[pulse_2s_ease-in-out_infinite]"></div>
-                    
-                    <div class="flex justify-between relative z-10 text-xs sm:text-sm">
-                        <div class="flex flex-col items-center">
-                            <div class="w-4 h-4 rounded-full bg-black dark:bg-white mb-2 ring-4 ring-white dark:ring-black"></div>
-                            <span class="font-medium">Placed</span>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <div class="w-4 h-4 rounded-full bg-black dark:bg-white mb-2 ring-4 ring-white dark:ring-black"></div>
-                            <span class="font-medium">Confirmed</span>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <div class="w-4 h-4 rounded-full bg-black dark:bg-white mb-2 ring-4 ring-white dark:ring-black animate-pulse"></div>
-                            <span class="font-medium">Shipped</span>
-                        </div>
-                        <div class="flex flex-col items-center opacity-50">
-                            <div class="w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 mb-2 ring-4 ring-white dark:ring-black"></div>
-                            <span>Out for Delivery</span>
-                        </div>
-                        <div class="flex flex-col items-center opacity-50">
-                            <div class="w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 mb-2 ring-4 ring-white dark:ring-black"></div>
-                            <span>Delivered</span>
+                <div class="overflow-x-auto -mx-6 px-6 md:mx-0 md:px-0 pb-4" style="scrollbar-width: none;">
+                    <style>.hide-scrollbar::-webkit-scrollbar { display: none; }</style>
+                    <div class="relative pt-8 pb-4 min-w-[450px]">
+                        <div class="absolute top-10 left-0 w-full h-0.5 bg-gray-200 dark:bg-gray-700"></div>
+                        <div class="absolute top-10 left-0 w-2/5 h-0.5 bg-black dark:bg-white animate-[pulse_2s_ease-in-out_infinite]"></div>
+                        
+                        <div class="flex justify-between relative z-10 text-xs sm:text-sm">
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 h-4 rounded-full bg-black dark:bg-white mb-2 ring-4 ring-white dark:ring-black"></div>
+                                <span class="font-medium">Placed</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 h-4 rounded-full bg-black dark:bg-white mb-2 ring-4 ring-white dark:ring-black"></div>
+                                <span class="font-medium">Confirmed</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <div class="w-4 h-4 rounded-full bg-black dark:bg-white mb-2 ring-4 ring-white dark:ring-black animate-pulse"></div>
+                                <span class="font-medium">Shipped</span>
+                            </div>
+                            <div class="flex flex-col items-center opacity-50">
+                                <div class="w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 mb-2 ring-4 ring-white dark:ring-black"></div>
+                                <span class="text-center w-16 leading-tight">Out for Delivery</span>
+                            </div>
+                            <div class="flex flex-col items-center opacity-50">
+                                <div class="w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 mb-2 ring-4 ring-white dark:ring-black"></div>
+                                <span>Delivered</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -158,7 +166,7 @@
                 </div>
                 <div class="bg-white dark:bg-black shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
                     <div class="hidden md:block w-full overflow-x-auto">
-                        <table class="w-full text-left text-sm">
+                        <table class="w-full text-left text-sm whitespace-nowrap">
                             <thead class="bg-gray-50 dark:bg-gray-900/50 text-xs uppercase tracking-wider text-gray-500">
                                 <tr>
                                     <th class="px-6 py-4 font-medium">Order ID</th>
@@ -210,17 +218,17 @@
             <section class="dashboard-section tab-profile hidden bg-white dark:bg-black p-8 shadow-sm border border-gray-100 dark:border-gray-800">
                 <h2 class="text-xl font-serif mb-6">Profile & Addresses</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
+                    <div class="flex flex-col items-start">
                         <h4 class="text-xs uppercase tracking-widest text-gray-500 mb-4">Contact Info</h4>
                         <p class="text-sm font-medium">Eleanor Vane</p>
                         <p class="text-sm text-gray-500 mb-4">eleanor.vane@example.com</p>
-                        <button class="text-xs uppercase underline">Edit Details</button>
+                        <button class="text-xs uppercase underline mt-auto">Edit Details</button>
                     </div>
-                    <div>
+                    <div class="flex flex-col items-start">
                         <h4 class="text-xs uppercase tracking-widest text-gray-500 mb-4">Default Shipping</h4>
                         <p class="text-sm font-medium">Home</p>
-                        <p class="text-sm text-gray-500">123 Botanical Way<br>Los Angeles, CA 90210<br>United States</p>
-                        <button class="text-xs uppercase underline mt-4">Manage Addresses</button>
+                        <p class="text-sm text-gray-500 mb-4">123 Botanical Way<br>Los Angeles, CA 90210<br>United States</p>
+                        <button class="text-xs uppercase underline mt-auto">Manage Addresses</button>
                     </div>
                 </div>
             </section>
@@ -251,7 +259,7 @@
                             </div>
                         </div>
                         <div class="flex gap-4 p-4 border border-gray-100 dark:border-gray-800 bg-white dark:bg-black">
-                            <img src="https://images.unsplash.com/photo-1556228720-192a6af4e865?auto=format&fit=crop&q=80&w=200" class="w-20 h-28 object-cover bg-gray-100">
+                            <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&q=80&w=200" class="w-20 h-28 object-cover bg-gray-100">
                             <div class="flex flex-col justify-between">
                                 <div>
                                     <h4 class="text-sm font-medium mb-1">Silk Body Butter</h4>
@@ -280,13 +288,13 @@
                     
                     // Reset all links
                     tabLinks.forEach(t => {
-                        t.classList.remove('bg-white', 'dark:bg-black', 'border-black', 'dark:border-white', 'shadow-sm');
-                        t.classList.add('border-transparent');
+                        t.classList.remove('lg:bg-white', 'lg:dark:bg-black', 'border-black', 'dark:border-white', 'lg:shadow-sm', 'text-black', 'dark:text-white');
+                        t.classList.add('border-transparent', 'text-gray-500');
                     });
                     
                     // Set active link
-                    link.classList.remove('border-transparent');
-                    link.classList.add('bg-white', 'dark:bg-black', 'border-black', 'dark:border-white', 'shadow-sm');
+                    link.classList.remove('border-transparent', 'text-gray-500');
+                    link.classList.add('lg:bg-white', 'lg:dark:bg-black', 'border-black', 'dark:border-white', 'lg:shadow-sm', 'text-black', 'dark:text-white');
                     
                     // Hide all sections
                     sections.forEach(sec => sec.classList.add('hidden'));
@@ -301,3 +309,10 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+

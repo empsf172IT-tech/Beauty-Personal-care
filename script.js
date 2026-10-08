@@ -1,5 +1,5 @@
 // Theme toggle
-const themeToggleBtn = document.getElementById('theme-toggle');
+const themeToggleBtns = document.querySelectorAll('.theme-toggle');
 
 // On load, check for theme preference
 if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -8,14 +8,16 @@ if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localS
     document.documentElement.classList.remove('dark');
 }
 
-themeToggleBtn.addEventListener('click', function() {
-    if (document.documentElement.classList.contains('dark')) {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('color-theme', 'light');
-    } else {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('color-theme', 'dark');
-    }
+themeToggleBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('color-theme', 'light');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
+        }
+    });
 });
 
 // Simple Cart Interaction
@@ -64,3 +66,27 @@ backToTopBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+// Mobile Menu Logic
+const mobileMenuBtns = document.querySelectorAll('.mobile-menu-btn');
+const mobileMenuCloseBtns = document.querySelectorAll('.mobile-menu-close');
+const mobileMenus = document.querySelectorAll('.mobile-menu');
+
+mobileMenuBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        mobileMenus.forEach(menu => {
+            menu.classList.remove('hidden');
+        });
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    });
+});
+
+mobileMenuCloseBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        mobileMenus.forEach(menu => {
+            menu.classList.add('hidden');
+        });
+        document.body.style.overflow = ''; // Restore scrolling
+    });
+});
+
