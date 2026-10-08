@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart & Checkout | LUMIÈRE Beauty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#faf8f7',
+                            900: '#1a1919'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'><path d='M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z'/></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-brand-50 dark:bg-brand-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
+
+    <!-- HEADER -->
+    <header
+        class="fixed w-full top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html"
+                class="flex items-center gap-2 font-serif text-2xl tracking-widest font-semibold uppercase">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                </svg>
+                Lumière
+            </a>
+
+            <nav class="hidden md:flex gap-8 text-sm uppercase tracking-wider font-medium">
+                <a href="index.html"
+                    class="text-gray-500 hover:text-black dark:hover:text-white transition-colors">Home</a>
+                <a href="shop.html"
+                    class="text-gray-500 hover:text-black dark:hover:text-white transition-colors">Shop</a>
+                <a href="rituals.html"
+                    class="text-gray-500 hover:text-black dark:hover:text-white transition-colors">Beauty Rituals</a>
+                <a href="dashboard.html"
+                    class="text-gray-500 hover:text-black dark:hover:text-white transition-colors">Dashboard</a>
+            </nav>
+
+            <div class="flex items-center gap-6">
+                <button id="theme-toggle" class="hover:opacity-70 transition-opacity">
+                    <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                        </path>
+                    </svg>
+                    <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                </button>
+                <a href="cart.html" class="relative hover:opacity-70 transition-opacity text-black dark:text-white">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <span
+                        class="absolute -top-2 -right-2 bg-black dark:bg-white text-white dark:text-black text-[10px] w-4 h-4 flex items-center justify-center rounded-full cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-24">
+
+        <!-- Section 1: Cart & Checkout Area -->
+        <section class="max-w-7xl mx-auto px-6 mb-24">
+            <h1 class="font-serif text-3xl md:text-4xl mb-12 border-b border-gray-200 dark:border-gray-800 pb-4">Secure
+                Checkout</h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Cart -->
+                <div>
+                    <h2 class="uppercase tracking-widest text-sm font-medium mb-6">Your Bag</h2>
+
+                    <div class="space-y-6">
+                        <div class="flex gap-6 border-b border-gray-200 dark:border-gray-800 pb-6">
+                            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=200"
+                                class="w-24 h-32 object-cover bg-gray-100">
+                            <div class="flex-1 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex justify-between items-start mb-1">
+                                        <h3 class="font-medium text-sm">Revitalizing Night Serum</h3>
+                                        <span class="font-serif">$85.00</span>
+                                    </div>
+                                    <p class="text-xs text-gray-500">30ml / 1oz</p>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div
+                                        class="flex items-center border border-gray-300 dark:border-gray-700 w-24 justify-between px-2 py-1">
+                                        <button class="text-gray-500 hover:text-black dark:hover:text-white">-</button>
+                                        <span class="text-sm">1</span>
+                                        <button class="text-gray-500 hover:text-black dark:hover:text-white">+</button>
+                                    </div>
+                                    <button
+                                        class="text-xs uppercase text-gray-500 hover:text-black dark:hover:text-white underline tracking-wider">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6 border-b border-gray-200 dark:border-gray-800 pb-6">
+                            <img src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=200"
+                                class="w-24 h-32 object-cover bg-gray-100">
+                            <div class="flex-1 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex justify-between items-start mb-1">
+                                        <h3 class="font-medium text-sm">Botanical Cleanser</h3>
+                                        <span class="font-serif">$45.00</span>
+                                    </div>
+                                    <p class="text-xs text-gray-500">150ml / 5oz</p>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <div
+                                        class="flex items-center border border-gray-300 dark:border-gray-700 w-24 justify-between px-2 py-1">
+                                        <button class="text-gray-500 hover:text-black dark:hover:text-white">-</button>
+                                        <span class="text-sm">1</span>
+                                        <button class="text-gray-500 hover:text-black dark:hover:text-white">+</button>
+                                    </div>
+                                    <button
+                                        class="text-xs uppercase text-gray-500 hover:text-black dark:hover:text-white underline tracking-wider">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex gap-4">
+                        <input type="text" placeholder="Gift card or discount code"
+                            class="flex-1 border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-black dark:focus:border-white">
+                        <button
+                            class="px-6 py-3 bg-gray-200 dark:bg-gray-800 text-sm uppercase tracking-wider font-medium">Apply</button>
+                    </div>
+
+                    <div class="mt-8 space-y-3 text-sm">
+                        <div class="flex justify-between text-gray-500">
+                            <span>Subtotal</span>
+                            <span>$130.00</span>
+                        </div>
+                        <div class="flex justify-between text-gray-500">
+                            <span>Shipping</span>
+                            <span>Calculated at next step</span>
+                        </div>
+                        <div
+                            class="flex justify-between font-medium text-lg pt-4 border-t border-gray-200 dark:border-gray-800">
+                            <span>Total</span>
+                            <span class="font-serif">$130.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Added Content to fill empty space -->
+                    <div
+                        class="mt-12 group relative overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-sm border border-gray-200 dark:border-gray-800">
+                        <img src="https://images.pexels.com/photos/9443524/pexels-photo-9443524.jpeg"
+                            class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+                            alt="Lumière Packaging">
+                        <div class="absolute inset-0 bg-black/40 p-8 flex flex-col justify-end text-center text-white">
+                            <h4 class="font-serif text-2xl mb-2">The Lumière Promise</h4>
+                            <p class="text-sm font-light">Complimentary deluxe samples & sustainable packaging with
+                                every order.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Checkout -->
+                <div class="bg-white dark:bg-black p-8 shadow-sm h-fit">
+                    <div
+                        class="flex items-center gap-2 mb-8 text-green-600 dark:text-green-400 text-xs uppercase tracking-widest font-bold">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        Secure Checkout
+                    </div>
+
+                    <form class="space-y-8" onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+                        <div>
+                            <h3 class="font-medium text-sm mb-4">Contact Information</h3>
+                            <input type="email" placeholder="Email Address" required
+                                class="w-full border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-3 text-sm mb-4 focus:outline-none focus:border-black dark:focus:border-white">
+                        </div>
+
+                        <div>
+                            <h3 class="font-medium text-sm mb-4">Shipping Address</h3>
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <input type="text" placeholder="First Name" required
+                                    class="w-full border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-black dark:focus:border-white">
+                                <input type="text" placeholder="Last Name" required
+                                    class="w-full border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-black dark:focus:border-white">
+                            </div>
+                            <input type="text" placeholder="Address" required
+                                class="w-full border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-3 text-sm mb-4 focus:outline-none focus:border-black dark:focus:border-white">
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" placeholder="City" required
+                                    class="w-full border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-black dark:focus:border-white">
+                                <input type="text" placeholder="Postal Code" required
+                                    class="w-full border border-gray-300 dark:border-gray-700 bg-transparent px-4 py-3 text-sm focus:outline-none focus:border-black dark:focus:border-white">
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-medium text-sm mb-4">Payment Method</h3>
+                            <div
+                                class="border border-gray-300 dark:border-gray-700 rounded-sm p-4 mb-4 flex items-center justify-between cursor-pointer">
+                                <div class="flex items-center gap-3">
+                                    <input type="radio" name="payment" checked class="accent-black dark:accent-white">
+                                    <span class="text-sm">Credit Card (Stripe)</span>
+                                </div>
+                                <div class="flex gap-1">
+                                    <div
+                                        class="w-8 h-5 bg-gray-200 dark:bg-gray-800 rounded text-[8px] flex items-center justify-center font-bold">
+                                        VISA</div>
+                                    <div
+                                        class="w-8 h-5 bg-gray-200 dark:bg-gray-800 rounded text-[8px] flex items-center justify-center font-bold">
+                                        MC</div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="space-y-4 p-4 border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900/50">
+                                <input type="text" placeholder="Card Number"
+                                    class="w-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-black px-4 py-3 text-sm focus:outline-none">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <input type="text" placeholder="MM / YY"
+                                        class="w-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-black px-4 py-3 text-sm focus:outline-none">
+                                    <input type="text" placeholder="CVC"
+                                        class="w-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-black px-4 py-3 text-sm focus:outline-none">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full py-4 bg-black text-white dark:bg-white dark:text-black uppercase tracking-wider font-medium text-sm hover:opacity-90 transition-opacity">
+                            Place Order • $130.00
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer
+        class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white pt-16 pb-8 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                    </svg>
+                    <h3 class="font-serif text-2xl uppercase tracking-widest">Lumière</h3>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Crafting pure, potent botanical formulas for
+                    conscious beauty rituals.</p>
+                <div class="flex gap-4 mt-6">
+                    <a href="#" class="hover:text-black dark:hover:text-white transition-colors"
+                        aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                clip-rule="evenodd" />
+                        </svg></a>
+                    <a href="#" class="hover:text-black dark:hover:text-white transition-colors"
+                        aria-label="TikTok"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <path
+                                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.04-.1z" />
+                        </svg></a>
+                    <a href="#" class="hover:text-black dark:hover:text-white transition-colors"
+                        aria-label="Pinterest"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <path
+                                d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z" />
+                        </svg></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-medium uppercase tracking-wider mb-6 text-sm">Explore</h4>
+                <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+                    <li><a href="shop.html" class="hover:text-black dark:hover:text-white transition-colors">Shop
+                            All</a></li>
+                    <li><a href="rituals.html" class="hover:text-black dark:hover:text-white transition-colors">Beauty
+                            Rituals</a></li>
+                    <li><a href="dashboard.html" class="hover:text-black dark:hover:text-white transition-colors">Track
+                            Order</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-medium uppercase tracking-wider mb-6 text-sm">Support</h4>
+                <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+                    <li><a href="#" class="hover:text-black dark:hover:text-white transition-colors">Shipping &
+                            Returns</a></li>
+                    <li><a href="#" class="hover:text-black dark:hover:text-white transition-colors">Privacy Policy</a>
+                    </li>
+                    <li><a href="#" class="hover:text-black dark:hover:text-white transition-colors">Terms of
+                            Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-medium uppercase tracking-wider mb-6 text-sm">Newsletter</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Join our community for exclusive access to new
+                    rituals.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Your email"
+                        class="bg-transparent border-b border-gray-400 dark:border-gray-600 px-0 py-2 w-full focus:outline-none focus:border-black dark:focus:border-white text-sm transition-colors">
+                    <button
+                        class="border-b border-gray-400 dark:border-gray-600 hover:border-black dark:hover:border-white py-2 px-4 uppercase text-sm font-medium tracking-wider transition-colors">Join</button>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-6 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4 transition-colors">
+            <p>&copy; 2026 Lumière Beauty. All rights reserved.</p>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

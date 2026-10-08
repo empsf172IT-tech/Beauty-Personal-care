@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking | LUMIÈRE Beauty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#faf8f7',
+                            900: '#1a1919'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'><path d='M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z'/></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-brand-50 dark:bg-brand-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
+    
+    <!-- DASHBOARD HEADER -->
+    <header class="fixed w-full top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 font-serif text-2xl tracking-widest font-semibold uppercase">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+                </svg>
+                Lumière
+            </a>
+            
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-base font-serif">
+                        E
+                    </div>
+                    <div class="hidden sm:block">
+                        <p class="text-sm font-medium leading-tight">Eleanor V.</p>
+                        <p class="text-[10px] uppercase tracking-wider text-gray-500">Premium Member</p>
+                    </div>
+                </div>
+                <div class="hidden sm:block w-px h-8 bg-gray-200 dark:bg-gray-800"></div>
+                <button id="theme-toggle" class="hover:opacity-70 transition-opacity">
+                    <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="pt-24 pb-24 max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-8 items-start">
+        
+        <!-- Dashboard Sidebar Navigation -->
+        <aside class="w-full md:w-64 shrink-0 mb-8 md:mb-0 md:sticky md:top-32">
+            <nav class="flex flex-col gap-2" id="dashboard-nav">
+                <a href="#overview" data-tab="tab-overview" class="tab-link px-4 py-3 bg-white dark:bg-black font-medium text-sm border-l-2 border-black dark:border-white shadow-sm">Overview</a>
+                <a href="#orders" data-tab="tab-orders" class="tab-link px-4 py-3 text-gray-500 hover:text-black dark:hover:text-white text-sm transition-colors border-l-2 border-transparent">My Orders</a>
+                <a href="#wishlist" data-tab="tab-wishlist" class="tab-link px-4 py-3 text-gray-500 hover:text-black dark:hover:text-white text-sm transition-colors border-l-2 border-transparent">Wishlist</a>
+                <a href="#profile" data-tab="tab-profile" class="tab-link px-4 py-3 text-gray-500 hover:text-black dark:hover:text-white text-sm transition-colors mb-6 border-l-2 border-transparent">Profile & Settings</a>
+                <a href="index.html" class="px-4 py-3 text-gray-500 hover:text-black dark:hover:text-white text-sm transition-colors border-t border-gray-200 dark:border-gray-800">Logout</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content with exactly 5 sections -->
+        <main class="flex-1 w-full space-y-12" id="dashboard-content">
+            
+            <!-- Section 1: Dashboard Summary Cards (Overview Tab) -->
+            <section class="dashboard-section tab-overview">
+                <h1 class="font-serif text-3xl mb-8">Order Dashboard</h1>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white dark:bg-black p-6 shadow-sm border border-gray-100 dark:border-gray-800 hover:-translate-y-1 transition-transform">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Total Orders</p>
+                        <p class="font-serif text-3xl">12</p>
+                    </div>
+                    <div class="bg-white dark:bg-black p-6 shadow-sm border border-gray-100 dark:border-gray-800 hover:-translate-y-1 transition-transform">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Active</p>
+                        <p class="font-serif text-3xl">1</p>
+                    </div>
+                    <div class="bg-white dark:bg-black p-6 shadow-sm border border-gray-100 dark:border-gray-800 hover:-translate-y-1 transition-transform">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Delivered</p>
+                        <p class="font-serif text-3xl">11</p>
+                    </div>
+                    <div class="bg-white dark:bg-black p-6 shadow-sm border border-gray-100 dark:border-gray-800 hover:-translate-y-1 transition-transform">
+                        <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Pending</p>
+                        <p class="font-serif text-3xl">0</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Active Order Tracking (Overview Tab) -->
+            <section class="dashboard-section tab-overview bg-white dark:bg-black p-8 shadow-sm border border-gray-100 dark:border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4 border-b border-gray-100 dark:border-gray-800 pb-6">
+                    <div>
+                        <h2 class="text-lg font-medium mb-1">Active Order #BT-20481</h2>
+                        <p class="text-sm text-gray-500">Placed on Oct 06, 2026</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-sm font-medium mb-1">Expected Delivery</p>
+                        <p class="font-serif text-xl text-green-600 dark:text-green-400">Oct 10, 2026</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 mb-8">
+                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=200" class="w-20 h-28 object-cover bg-gray-100">
+                    <div>
+                        <h3 class="font-medium text-sm mb-1">Revitalizing Night Serum</h3>
+                        <p class="text-xs text-gray-500 mb-2">Qty: 1 • $85.00</p>
+                        <p class="text-xs text-gray-500">Tracking: <span class="text-black dark:text-white font-mono bg-gray-100 dark:bg-gray-800 px-2 py-1">FEDEX-948371902</span></p>
+                    </div>
+                </div>
+
+                <!-- Tracking Timeline -->
+                <div class="relative pt-8 pb-4">
+                    <div class="absolute top-10 left-0 w-full h-0.5 bg-gray-200 dark:bg-gray-700"></div>
+                    <div class="absolute top-10 left-0 w-2/5 h-0.5 bg-black dark:bg-white animate-[pulse_2s_ease-in-out_infinite]"></div>
+                    
+                    <div class="flex justify-between relative z-10 text-xs sm:text-sm">
+                        <div class="flex flex-col items-center">
+                            <div class="w-4 h-4 rounded-full bg-black dark:bg-white mb-2 ring-4 ring-white dark:ring-black"></div>
+                            <span class="font-medium">Placed</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-4 h-4 rounded-full bg-black dark:bg-white mb-2 ring-4 ring-white dark:ring-black"></div>
+                            <span class="font-medium">Confirmed</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-4 h-4 rounded-full bg-black dark:bg-white mb-2 ring-4 ring-white dark:ring-black animate-pulse"></div>
+                            <span class="font-medium">Shipped</span>
+                        </div>
+                        <div class="flex flex-col items-center opacity-50">
+                            <div class="w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 mb-2 ring-4 ring-white dark:ring-black"></div>
+                            <span>Out for Delivery</span>
+                        </div>
+                        <div class="flex flex-col items-center opacity-50">
+                            <div class="w-4 h-4 rounded-full bg-gray-300 dark:bg-gray-600 mb-2 ring-4 ring-white dark:ring-black"></div>
+                            <span>Delivered</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Order History (Orders Tab) -->
+            <section class="dashboard-section tab-orders hidden">
+                <div class="flex justify-between items-end mb-6">
+                    <h2 class="text-xl font-serif">Order History</h2>
+                    <a href="#" class="text-xs uppercase underline text-gray-500 hover:text-black dark:hover:text-white">View All</a>
+                </div>
+                <div class="bg-white dark:bg-black shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden">
+                    <div class="hidden md:block w-full overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-gray-50 dark:bg-gray-900/50 text-xs uppercase tracking-wider text-gray-500">
+                                <tr>
+                                    <th class="px-6 py-4 font-medium">Order ID</th>
+                                    <th class="px-6 py-4 font-medium">Date</th>
+                                    <th class="px-6 py-4 font-medium">Product</th>
+                                    <th class="px-6 py-4 font-medium">Status</th>
+                                    <th class="px-6 py-4 font-medium">Amount</th>
+                                    <th class="px-6 py-4 font-medium">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors">
+                                    <td class="px-6 py-4 font-medium">#BT-19204</td>
+                                    <td class="px-6 py-4 text-gray-500">Sep 15, 2026</td>
+                                    <td class="px-6 py-4">Hydrating Essence</td>
+                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs rounded">Delivered</span></td>
+                                    <td class="px-6 py-4 font-serif">$65.00</td>
+                                    <td class="px-6 py-4"><button class="text-xs uppercase underline">Reorder</button></td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-900/50 transition-colors">
+                                    <td class="px-6 py-4 font-medium">#BT-18092</td>
+                                    <td class="px-6 py-4 text-gray-500">Jul 22, 2026</td>
+                                    <td class="px-6 py-4">Radiance Face Oil</td>
+                                    <td class="px-6 py-4"><span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs rounded">Delivered</span></td>
+                                    <td class="px-6 py-4 font-serif">$110.00</td>
+                                    <td class="px-6 py-4"><button class="text-xs uppercase underline">Reorder</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="md:hidden flex flex-col divide-y divide-gray-100 dark:divide-gray-800">
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="font-medium text-sm">#BT-19204</span>
+                                <span class="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-xs rounded">Delivered</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mb-1">Sep 15, 2026</p>
+                            <p class="text-sm mb-2">Hydrating Essence</p>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="font-serif">$65.00</span>
+                                <button class="text-xs uppercase underline">Reorder</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Saved Addresses / Profile (Profile Tab) -->
+            <section class="dashboard-section tab-profile hidden bg-white dark:bg-black p-8 shadow-sm border border-gray-100 dark:border-gray-800">
+                <h2 class="text-xl font-serif mb-6">Profile & Addresses</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest text-gray-500 mb-4">Contact Info</h4>
+                        <p class="text-sm font-medium">Eleanor Vane</p>
+                        <p class="text-sm text-gray-500 mb-4">eleanor.vane@example.com</p>
+                        <button class="text-xs uppercase underline">Edit Details</button>
+                    </div>
+                    <div>
+                        <h4 class="text-xs uppercase tracking-widest text-gray-500 mb-4">Default Shipping</h4>
+                        <p class="text-sm font-medium">Home</p>
+                        <p class="text-sm text-gray-500">123 Botanical Way<br>Los Angeles, CA 90210<br>United States</p>
+                        <button class="text-xs uppercase underline mt-4">Manage Addresses</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Rewards & Wishlist (Wishlist Tab) -->
+            <section class="dashboard-section tab-wishlist hidden space-y-12">
+                <div class="bg-brand-50 dark:bg-brand-900 p-8 border border-gray-200 dark:border-gray-800 text-center">
+                    <svg class="w-8 h-8 mx-auto mb-4 text-yellow-600 dark:text-yellow-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    <h2 class="text-xl font-serif mb-2">Lumière Gold Status</h2>
+                    <p class="text-sm text-gray-500 font-light mb-6">You are 1,200 points away from unlocking Platinum tier benefits.</p>
+                    <div class="w-full bg-gray-200 dark:bg-gray-800 h-1 mb-6 rounded-full overflow-hidden">
+                        <div class="bg-black dark:bg-white h-full" style="width: 70%"></div>
+                    </div>
+                    <button class="px-6 py-2 border border-black dark:border-white text-xs uppercase tracking-wider font-medium hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">View Rewards</button>
+                </div>
+
+                <div>
+                    <h2 class="text-xl font-serif mb-6">My Wishlist</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex gap-4 p-4 border border-gray-100 dark:border-gray-800 bg-white dark:bg-black">
+                            <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&q=80&w=200" class="w-20 h-28 object-cover bg-gray-100">
+                            <div class="flex flex-col justify-between">
+                                <div>
+                                    <h4 class="text-sm font-medium mb-1">Hydrating Essence</h4>
+                                    <p class="font-serif text-sm">$65.00</p>
+                                </div>
+                                <button class="text-xs uppercase underline hover:text-gray-500 self-start">Move to Bag</button>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 p-4 border border-gray-100 dark:border-gray-800 bg-white dark:bg-black">
+                            <img src="https://images.unsplash.com/photo-1556228720-192a6af4e865?auto=format&fit=crop&q=80&w=200" class="w-20 h-28 object-cover bg-gray-100">
+                            <div class="flex flex-col justify-between">
+                                <div>
+                                    <h4 class="text-sm font-medium mb-1">Silk Body Butter</h4>
+                                    <p class="font-serif text-sm">$95.00</p>
+                                </div>
+                                <button class="text-xs uppercase underline hover:text-gray-500 self-start">Move to Bag</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Dashboard Tab Switcher Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabLinks = document.querySelectorAll('.tab-link');
+            const sections = document.querySelectorAll('.dashboard-section');
+
+            tabLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // Reset all links
+                    tabLinks.forEach(t => {
+                        t.classList.remove('bg-white', 'dark:bg-black', 'border-black', 'dark:border-white', 'shadow-sm');
+                        t.classList.add('border-transparent');
+                    });
+                    
+                    // Set active link
+                    link.classList.remove('border-transparent');
+                    link.classList.add('bg-white', 'dark:bg-black', 'border-black', 'dark:border-white', 'shadow-sm');
+                    
+                    // Hide all sections
+                    sections.forEach(sec => sec.classList.add('hidden'));
+                    
+                    // Show target sections
+                    const targetClass = link.getAttribute('data-tab');
+                    const targetSections = document.querySelectorAll('.' + targetClass);
+                    targetSections.forEach(sec => sec.classList.remove('hidden'));
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | LUMIÈRE Beauty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#faf8f7',
+                            900: '#1a1919'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'><path d='M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z'/></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-brand-50 dark:bg-brand-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
+
+    <!-- HEADER -->
+    <header
+        class="fixed w-full top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html"
+                class="flex items-center gap-2 font-serif text-2xl tracking-widest font-semibold uppercase">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                </svg>
+                Lumière
+            </a>
+
+            <nav class="hidden md:flex gap-8 text-sm uppercase tracking-wider font-medium">
+                <a href="index.html"
+                    class="text-gray-500 hover:text-black dark:hover:text-white transition-colors">Home</a>
+                <a href="shop.html"
+                    class="text-black dark:text-white border-b-2 border-black dark:border-white">Shop</a>
+                <a href="rituals.html"
+                    class="text-gray-500 hover:text-black dark:hover:text-white transition-colors">Beauty Rituals</a>
+                <a href="dashboard.html"
+                    class="text-gray-500 hover:text-black dark:hover:text-white transition-colors">Dashboard</a>
+            </nav>
+
+            <div class="flex items-center gap-6">
+                <button id="theme-toggle" class="hover:opacity-70 transition-opacity">
+                    <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                        </path>
+                    </svg>
+                    <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                </button>
+                <a href="cart.html" class="relative hover:opacity-70 transition-opacity">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <span
+                        class="absolute -top-2 -right-2 bg-black dark:bg-white text-white dark:text-black text-[10px] w-4 h-4 flex items-center justify-center rounded-full cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Section 1: Product Discovery (Catalog) -->
+        <section>
+            <div class="relative bg-black text-white mb-12">
+                <img src="https://images.pexels.com/photos/8330045/pexels-photo-8330045.jpeg" alt="Shop Hero"
+                    class="absolute inset-0 w-full h-full object-cover opacity-60">
+                <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 text-center">
+                    <h1 class="font-serif text-5xl md:text-6xl mb-4 animate-fade-up">The Collection</h1>
+                    <p class="text-lg font-light animate-fade-up" style="animation-delay: 0.1s">Pure botanicals for your
+                        daily ritual.</p>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-6 pb-12">
+
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                    <div class="flex gap-4 overflow-x-auto pb-2 w-full md:w-auto hide-scrollbar">
+                        <button
+                            class="text-sm font-medium border-b border-black dark:border-white pb-1 whitespace-nowrap">All
+                            Skincare</button>
+                        <button
+                            class="text-sm text-gray-500 hover:text-black dark:hover:text-white transition-colors pb-1 whitespace-nowrap">Haircare</button>
+                        <button
+                            class="text-sm text-gray-500 hover:text-black dark:hover:text-white transition-colors pb-1 whitespace-nowrap">Body
+                            Care</button>
+                        <button
+                            class="text-sm text-gray-500 hover:text-black dark:hover:text-white transition-colors pb-1 whitespace-nowrap">Wellness</button>
+                    </div>
+                    <div class="flex gap-4">
+                        <select
+                            class="bg-transparent border border-gray-300 dark:border-gray-700 px-3 py-1 text-sm focus:outline-none">
+                            <option>Sort by: Featured</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Products -->
+                    <!-- Product 1 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-100 dark:bg-gray-800 mb-4">
+                            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800"
+                                class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between">
+                                <button class="text-white text-sm uppercase tracking-wider hover:underline"
+                                    onclick="addToCart()">Add to Cart</button>
+                                <button class="text-white"><svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                        </path>
+                                    </svg></button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-medium mb-1">Revitalizing Night Serum</h3>
+                                <div class="flex text-yellow-500 text-xs mb-1">★★★★★ <span
+                                        class="text-gray-500 ml-1">(42)</span></div>
+                            </div>
+                            <p class="font-serif">$85.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-100 dark:bg-gray-800 mb-4">
+                            <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=800"
+                                class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between">
+                                <button class="text-white text-sm uppercase tracking-wider hover:underline"
+                                    onclick="addToCart()">Add to Cart</button>
+                                <button class="text-white"><svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                        </path>
+                                    </svg></button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-medium mb-1">Rose Quartz Polish</h3>
+                                <div class="flex text-yellow-500 text-xs mb-1">★★★★☆ <span
+                                        class="text-gray-500 ml-1">(28)</span></div>
+                            </div>
+                            <p class="font-serif">$55.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-100 dark:bg-gray-800 mb-4">
+                            <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&q=80&w=800"
+                                class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between">
+                                <button class="text-white text-sm uppercase tracking-wider hover:underline"
+                                    onclick="addToCart()">Add to Cart</button>
+                                <button class="text-white"><svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                        </path>
+                                    </svg></button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-medium mb-1">Hydrating Essence</h3>
+                                <div class="flex text-yellow-500 text-xs mb-1">★★★★★ <span
+                                        class="text-gray-500 ml-1">(94)</span></div>
+                            </div>
+                            <p class="font-serif">$65.00</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="group cursor-pointer">
+                        <div class="relative aspect-[3/4] overflow-hidden bg-gray-100 dark:bg-gray-800 mb-4">
+                            <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&q=80&w=800"
+                                class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between">
+                                <button class="text-white text-sm uppercase tracking-wider hover:underline"
+                                    onclick="addToCart()">Add to Cart</button>
+                                <button class="text-white"><svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                        </path>
+                                    </svg></button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-medium mb-1">Radiance Face Oil</h3>
+                                <div class="flex text-yellow-500 text-xs mb-1">★★★★★ <span
+                                        class="text-gray-500 ml-1">(105)</span></div>
+                            </div>
+                            <p class="font-serif">$110.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Featured Product Spotlight -->
+        <section class="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-black">
+            <div class="max-w-7xl mx-auto px-6 py-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <span class="text-xs font-medium uppercase tracking-widest text-gray-500 mb-2 block">Editor's
+                            Pick</span>
+                        <h2 class="font-serif text-4xl md:text-5xl mb-6">Luminous Silk Body Butter</h2>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6 font-light leading-relaxed">
+                            A rich, whipped texture that melts upon contact, delivering profound hydration and a subtle,
+                            natural glow. Formulated with organic shea butter and rare botanical extracts.
+                        </p>
+
+                        <div class="mb-8">
+                            <h4 class="font-medium mb-2 uppercase text-xs tracking-wider">Key Ingredients</h4>
+                            <ul class="text-sm text-gray-500 dark:text-gray-400 space-y-1 font-light">
+                                <li>� Squalane: Deeply hydrates without greasiness.</li>
+                                <li>� Niacinamide: Improves skin texture and tone.</li>
+                                <li>� Vitamin E: Powerful antioxidant protection.</li>
+                            </ul>
+                        </div>
+
+                        <div class="flex items-center gap-6 mb-8">
+                            <span class="font-serif text-3xl">$95.00</span>
+                            <div class="flex items-center border border-gray-300 dark:border-gray-700 px-4 py-2">
+                                <button class="text-gray-500 hover:text-black dark:hover:text-white">-</button>
+                                <span class="mx-4 text-sm">1</span>
+                                <button class="text-gray-500 hover:text-black dark:hover:text-white">+</button>
+                            </div>
+                        </div>
+
+                        <button onclick="addToCart()"
+                            class="w-full md:w-auto px-12 py-4 bg-black text-white dark:bg-white dark:text-black text-sm uppercase tracking-wider font-medium hover:opacity-90 transition-opacity">
+                            Add to Cart
+                        </button>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <img src="https://images.pexels.com/photos/17856248/pexels-photo-17856248.jpeg"
+                            alt="Luminous Silk Body Butter" class="w-full aspect-square object-cover shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: New Arrivals Banner -->
+        <section class="py-20 bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 text-center">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="font-serif text-3xl mb-4">Just Arrived: The Summer Radiance Collection</h2>
+                <p class="text-gray-500 dark:text-gray-400 mb-8 font-light">Lightweight, sun-kissed hydration for the
+                    warmer months.</p>
+                <button
+                    class="px-8 py-3 border border-black dark:border-white text-sm uppercase tracking-wider hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors">Shop
+                    New Arrivals</button>
+            </div>
+        </section>
+
+        <!-- Section 4: Shop by Skin Concern -->
+        <section class="py-24 max-w-7xl mx-auto px-6 border-t border-gray-200 dark:border-gray-800">
+            <h2 class="font-serif text-3xl text-center mb-16">Shop by Concern</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="#" class="block text-center group">
+                    <div
+                        class="w-24 h-24 mx-auto rounded-full bg-blue-50 dark:bg-gray-800 flex items-center justify-center mb-4 group-hover:bg-blue-100 dark:group-hover:bg-gray-700 transition-colors">
+                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 3v2m0 14v2m9-9h-2M5 12H3m14.243-7.071l-1.414 1.414M7.172 16.828l-1.414 1.414m11.314 0l-1.414-1.414M7.172 7.172L5.757 5.757M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h4 class="font-medium text-sm">Dryness & Hydration</h4>
+                </a>
+                <a href="#" class="block text-center group">
+                    <div
+                        class="w-24 h-24 mx-auto rounded-full bg-red-50 dark:bg-gray-800 flex items-center justify-center mb-4 group-hover:bg-red-100 dark:group-hover:bg-gray-700 transition-colors">
+                        <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-medium text-sm">Anti-Aging & Firming</h4>
+                </a>
+                <a href="#" class="block text-center group">
+                    <div
+                        class="w-24 h-24 mx-auto rounded-full bg-green-50 dark:bg-gray-800 flex items-center justify-center mb-4 group-hover:bg-green-100 dark:group-hover:bg-gray-700 transition-colors">
+                        <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                            </path>
+                        </svg>
+                    </div>
+                    <h4 class="font-medium text-sm">Acne & Blemishes</h4>
+                </a>
+                <a href="#" class="block text-center group">
+                    <div
+                        class="w-24 h-24 mx-auto rounded-full bg-yellow-50 dark:bg-gray-800 flex items-center justify-center mb-4 group-hover:bg-yellow-100 dark:group-hover:bg-gray-700 transition-colors">
+                        <svg class="w-8 h-8 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="font-medium text-sm">Dullness & Brightening</h4>
+                </a>
+            </div>
+        </section>
+
+        <!-- Section 5: Exclusive Bundles -->
+        <section class="py-24 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="font-serif text-3xl mb-2">Curated Sets</h2>
+                        <p class="text-gray-500">Perfectly paired rituals for a complete experience.</p>
+                    </div>
+                    <a href="#"
+                        class="hidden md:block border-b border-black dark:border-white pb-1 text-sm uppercase tracking-wider font-medium">View
+                        All Sets</a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Bundle 1 -->
+                    <div class="group relative overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <img src="https://images.pexels.com/photos/29022724/pexels-photo-29022724.jpeg"
+                            class="w-full aspect-[16/9] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/40 p-8 flex flex-col justify-end text-white">
+                            <h3 class="font-serif text-2xl mb-2">The Ultimate Glow Trio</h3>
+                            <p class="text-sm font-light mb-4">Cleanser, Serum, and Oil for complete radiance.</p>
+                            <div class="flex items-center gap-4">
+                                <span class="font-serif text-xl">$210.00 <span
+                                        class="line-through text-sm text-gray-300 ml-2">$240.00</span></span>
+                                <button onclick="addToCart()"
+                                    class="px-6 py-2 bg-white text-black text-xs uppercase tracking-wider font-medium hover:bg-gray-200 transition-colors">Add
+                                    Bundle</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bundle 2 -->
+                    <div class="group relative overflow-hidden bg-gray-100 dark:bg-gray-800">
+                        <img src="https://images.pexels.com/photos/8903327/pexels-photo-8903327.jpeg"
+                            class="w-full aspect-[16/9] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-black/40 p-8 flex flex-col justify-end text-white">
+                            <h3 class="font-serif text-2xl mb-2">Nighttime Recovery Set</h3>
+                            <p class="text-sm font-light mb-4">Repair and rejuvenate while you sleep.</p>
+                            <div class="flex items-center gap-4">
+                                <span class="font-serif text-xl">$160.00 <span
+                                        class="line-through text-sm text-gray-300 ml-2">$185.00</span></span>
+                                <button onclick="addToCart()"
+                                    class="px-6 py-2 bg-white text-black text-xs uppercase tracking-wider font-medium hover:bg-gray-200 transition-colors">Add
+                                    Bundle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+        class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white pt-16 pb-8 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                    </svg>
+                    <h3 class="font-serif text-2xl uppercase tracking-widest">Lumi�re</h3>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Crafting pure, potent botanical formulas for
+                    conscious beauty rituals.</p>
+                <div class="flex gap-4 mt-6">
+                    <a href="#" class="hover:text-black dark:hover:text-white transition-colors"
+                        aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                clip-rule="evenodd" />
+                        </svg></a>
+                    <a href="#" class="hover:text-black dark:hover:text-white transition-colors"
+                        aria-label="TikTok"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <path
+                                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.04-.1z" />
+                        </svg></a>
+                    <a href="#" class="hover:text-black dark:hover:text-white transition-colors"
+                        aria-label="Pinterest"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <path
+                                d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z" />
+                        </svg></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-medium uppercase tracking-wider mb-6 text-sm">Explore</h4>
+                <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+                    <li><a href="shop.html" class="hover:text-black dark:hover:text-white transition-colors">Shop
+                            All</a></li>
+                    <li><a href="rituals.html" class="hover:text-black dark:hover:text-white transition-colors">Beauty
+                            Rituals</a></li>
+                    <li><a href="dashboard.html" class="hover:text-black dark:hover:text-white transition-colors">Track
+                            Order</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-medium uppercase tracking-wider mb-6 text-sm">Support</h4>
+                <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+                    <li><a href="#" class="hover:text-black dark:hover:text-white transition-colors">Shipping &
+                            Returns</a></li>
+                    <li><a href="#" class="hover:text-black dark:hover:text-white transition-colors">Privacy Policy</a>
+                    </li>
+                    <li><a href="#" class="hover:text-black dark:hover:text-white transition-colors">Terms of
+                            Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-medium uppercase tracking-wider mb-6 text-sm">Newsletter</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Join our community for exclusive access to new
+                    rituals.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Your email"
+                        class="bg-transparent border-b border-gray-400 dark:border-gray-600 px-0 py-2 w-full focus:outline-none focus:border-black dark:focus:border-white text-sm transition-colors">
+                    <button
+                        class="border-b border-gray-400 dark:border-gray-600 hover:border-black dark:hover:border-white py-2 px-4 uppercase text-sm font-medium tracking-wider transition-colors">Join</button>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-6 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4 transition-colors">
+            <p>&copy; 2026 Lumi�re Beauty. All rights reserved.</p>
+
+        </div>
+    </footer>
+    </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMIÈRE | Premium Beauty & Skincare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#faf8f7',
+                            900: '#1a1919'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'><path d='M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z'/></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-brand-50 dark:bg-brand-900 text-gray-900 dark:text-gray-100 font-sans transition-colors duration-300">
+
+    <!-- HEADER -->
+    <header
+        class="fixed w-full top-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html"
+                class="flex items-center gap-2 font-serif text-2xl tracking-widest font-semibold uppercase">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                </svg>
+                Lumière
+            </a>
+
+            <nav class="hidden md:flex gap-8 text-sm uppercase tracking-wider font-medium">
+                <a href="index.html"
+                    class="text-black dark:text-white border-b-2 border-black dark:border-white">Home</a>
+                <a href="shop.html"
+                    class="text-gray-500 hover:text-black dark:hover:text-white transition-colors">Shop</a>
+                <a href="rituals.html"
+                    class="text-gray-500 hover:text-black dark:hover:text-white transition-colors">Beauty Rituals</a>
+                <a href="dashboard.html"
+                    class="text-gray-500 hover:text-black dark:hover:text-white transition-colors">Dashboard</a>
+            </nav>
+
+            <div class="flex items-center gap-6">
+                <button id="theme-toggle" class="hover:opacity-70 transition-opacity">
+                    <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                        </path>
+                    </svg>
+                    <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                        </path>
+                    </svg>
+                </button>
+                <a href="cart.html" class="relative hover:opacity-70 transition-opacity">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                    </svg>
+                    <span
+                        class="absolute -top-2 -right-2 bg-black dark:bg-white text-white dark:text-black text-[10px] w-4 h-4 flex items-center justify-center rounded-full cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Section 1: Premium Beauty Hero -->
+        <section class="relative h-[90vh] flex items-center justify-center overflow-hidden">
+            <img src="https://images.pexels.com/photos/32709978/pexels-photo-32709978.jpeg" alt="Lumiere Skincare"
+                class="absolute inset-0 w-full h-full object-cover animate-image-zoom">
+            <div class="absolute inset-0 bg-black/30 dark:bg-black/50"></div>
+            <div class="relative z-10 text-center text-white max-w-3xl px-6 animate-fade-up">
+                <h1 class="font-serif text-5xl md:text-7xl mb-6">Awaken Your Radiance</h1>
+                <p class="text-lg md:text-xl font-light mb-10">Discover our curated collection of botanical-infused
+                    formulations designed to elevate your daily ritual.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="shop.html"
+                        class="px-8 py-4 bg-white text-black text-sm uppercase tracking-wider font-medium hover:bg-gray-100 transition-colors">Shop
+                        Collection</a>
+                    <a href="rituals.html"
+                        class="px-8 py-4 border border-white text-white text-sm uppercase tracking-wider font-medium hover:bg-white hover:text-black transition-colors">Explore
+                        Rituals</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Bestselling Collection -->
+        <section class="py-24 px-6 max-w-7xl mx-auto border-b border-gray-200 dark:border-gray-800">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl mb-4">Cult Favorites</h2>
+                <p class="text-gray-500 dark:text-gray-400">Our most beloved formulations.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="group cursor-pointer text-center">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-100 dark:bg-gray-800 mb-4">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800"
+                            alt="Product"
+                            class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between">
+                            <button class="text-white text-sm uppercase tracking-wider hover:underline"
+                                onclick="addToCart()">Add to Cart</button>
+                            <button class="text-white"><svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                    </path>
+                                </svg></button>
+                        </div>
+                    </div>
+                    <h3 class="font-medium mb-1">Revitalizing Night Serum</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Cellular Repair</p>
+                    <p class="font-serif">$85.00</p>
+                </div>
+                <div class="group cursor-pointer text-center">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-100 dark:bg-gray-800 mb-4">
+                        <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&q=80&w=800"
+                            alt="Product"
+                            class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between">
+                            <button class="text-white text-sm uppercase tracking-wider hover:underline"
+                                onclick="addToCart()">Add to Cart</button>
+                            <button class="text-white"><svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                    </path>
+                                </svg></button>
+                        </div>
+                    </div>
+                    <h3 class="font-medium mb-1">Hydrating Essence</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Deep Moisture</p>
+                    <p class="font-serif">$65.00</p>
+                </div>
+                <div class="group cursor-pointer text-center">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-100 dark:bg-gray-800 mb-4">
+                        <img src="https://images.unsplash.com/photo-1617897903246-719242758050?auto=format&fit=crop&q=80&w=800"
+                            alt="Product"
+                            class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between">
+                            <button class="text-white text-sm uppercase tracking-wider hover:underline"
+                                onclick="addToCart()">Add to Cart</button>
+                            <button class="text-white"><svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                    </path>
+                                </svg></button>
+                        </div>
+                    </div>
+                    <h3 class="font-medium mb-1">Botanical Cleanser</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Gentle Purifying</p>
+                    <p class="font-serif">$45.00</p>
+                </div>
+                <div class="group cursor-pointer text-center">
+                    <div class="relative aspect-[3/4] overflow-hidden bg-gray-100 dark:bg-gray-800 mb-4">
+                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&q=80&w=800"
+                            alt="Product"
+                            class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div
+                            class="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex justify-between">
+                            <button class="text-white text-sm uppercase tracking-wider hover:underline"
+                                onclick="addToCart()">Add to Cart</button>
+                            <button class="text-white"><svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                    </path>
+                                </svg></button>
+                        </div>
+                    </div>
+                    <h3 class="font-medium mb-1">Radiance Face Oil</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">Glow & Protect</p>
+                    <p class="font-serif">$110.00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Brand Philosophy -->
+        <section class="py-24 bg-white dark:bg-black">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <img src="https://images.pexels.com/photos/7795685/pexels-photo-7795685.jpeg" alt="Philosophy"
+                        class="w-full aspect-[4/5] object-cover shadow-xl">
+                </div>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4 block">Our
+                        Philosophy</span>
+                    <h2 class="font-serif text-4xl md:text-5xl mb-8">Purity Meets Efficacy</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6 font-light leading-relaxed">
+                        At Lumière, we believe that nature holds the ultimate secrets to radiant skin. We meticulously
+                        source the finest organic botanicals from around the globe, combining them with cutting-edge
+                        skincare science.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-10 font-light leading-relaxed">
+                        Every formulation is crafted without compromise—free from harmful chemicals, cruelty-free, and
+                        designed to respect both your skin and the planet.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-8 mb-10 border-t border-gray-200 dark:border-gray-800 pt-8">
+                        <div>
+                            <span class="block font-serif text-3xl mb-1 text-black dark:text-white">100%</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500 font-medium">Vegan &
+                                Cruelty-Free</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-3xl mb-1 text-black dark:text-white">0%</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500 font-medium">Synthetic
+                                Fragrances</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-3xl mb-1 text-black dark:text-white">Eco</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500 font-medium">Recyclable
+                                Packaging</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-3xl mb-1 text-black dark:text-white">Pure</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500 font-medium">Cold-Pressed
+                                Oils</span>
+                        </div>
+                    </div>
+
+                    <a href="shop.html"
+                        class="inline-block border-b border-black dark:border-white pb-1 uppercase text-sm tracking-wider font-medium hover:text-gray-500 transition-colors">Discover
+                        Our Story</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Testimonials / Press -->
+        <section class="py-24 bg-brand-50 dark:bg-brand-900 border-t border-gray-200 dark:border-gray-800">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="font-serif text-3xl mb-16">Acclaimed by the Best</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="px-4 flex flex-col h-full">
+                        <p class="text-yellow-500 mb-4 text-sm">★★★★★</p>
+                        <p class="font-serif text-lg mb-6">"The Radiance Face Oil has completely transformed my
+                            complexion. It's liquid gold."</p>
+                        <p class="text-xs uppercase tracking-widest text-gray-500 font-medium mt-auto">— Vogue Magazine</p>
+                    </div>
+                    <div class="px-4 flex flex-col h-full">
+                        <p class="text-yellow-500 mb-4 text-sm">★★★★★</p>
+                        <p class="font-serif text-lg mb-6">"Finally, a brand that understands luxury without
+                            compromising on clean ingredients."</p>
+                        <p class="text-xs uppercase tracking-widest text-gray-500 font-medium mt-auto">— Harper's Bazaar</p>
+                    </div>
+                    <div class="px-4 flex flex-col h-full">
+                        <p class="text-yellow-500 mb-4 text-sm">★★★★★</p>
+                        <p class="font-serif text-lg mb-6">"Lumière's Night Serum is an absolute essential in any
+                            serious skincare routine."</p>
+                        <p class="text-xs uppercase tracking-widest text-gray-500 font-medium mt-auto">— Allure</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Instagram / Community -->
+        <section class="py-24 bg-white dark:bg-black">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl mb-4">Join the Lumière Community</h2>
+                <p class="text-gray-500 dark:text-gray-400">@lumierebeauty</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-1">
+                <a href="#" class="group relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=600"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="group relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
+                    <img src="https://images.unsplash.com/photo-1629198688000-71f23e745b6e?auto=format&fit=crop&q=80&w=600"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163... (same icon for demo) ..." />
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="group relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
+                    <img src="https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163... (same icon) ..." />
+                        </svg>
+                    </div>
+                </a>
+                <a href="#" class="group relative aspect-square overflow-hidden bg-gray-100 dark:bg-gray-800">
+                    <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=600"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163... (same icon) ..." />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+        class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white pt-16 pb-8 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+                    </svg>
+                    <h3 class="font-serif text-2xl uppercase tracking-widest">Lumière</h3>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Crafting pure, potent botanical formulas for
+                    conscious beauty rituals.</p>
+                <div class="flex gap-4 mt-6">
+                    <a href="#" class="hover:text-black dark:hover:text-white transition-colors"
+                        aria-label="Instagram"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                clip-rule="evenodd" />
+                        </svg></a>
+                    <a href="#" class="hover:text-black dark:hover:text-white transition-colors"
+                        aria-label="TikTok"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <path
+                                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.04-.1z" />
+                        </svg></a>
+                    <a href="#" class="hover:text-black dark:hover:text-white transition-colors"
+                        aria-label="Pinterest"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <path
+                                d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z" />
+                        </svg></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-medium uppercase tracking-wider mb-6 text-sm">Explore</h4>
+                <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+                    <li><a href="shop.html" class="hover:text-black dark:hover:text-white transition-colors">Shop
+                            All</a></li>
+                    <li><a href="rituals.html" class="hover:text-black dark:hover:text-white transition-colors">Beauty
+                            Rituals</a></li>
+                    <li><a href="dashboard.html" class="hover:text-black dark:hover:text-white transition-colors">Track
+                            Order</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-medium uppercase tracking-wider mb-6 text-sm">Support</h4>
+                <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+                    <li><a href="#" class="hover:text-black dark:hover:text-white transition-colors">Shipping &
+                            Returns</a></li>
+                    <li><a href="#" class="hover:text-black dark:hover:text-white transition-colors">Privacy Policy</a>
+                    </li>
+                    <li><a href="#" class="hover:text-black dark:hover:text-white transition-colors">Terms of
+                            Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-medium uppercase tracking-wider mb-6 text-sm">Newsletter</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">Join our community for exclusive access to new
+                    rituals.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Your email"
+                        class="bg-transparent border-b border-gray-400 dark:border-gray-600 px-0 py-2 w-full focus:outline-none focus:border-black dark:focus:border-white text-sm transition-colors">
+                    <button
+                        class="border-b border-gray-400 dark:border-gray-600 hover:border-black dark:hover:border-white py-2 px-4 uppercase text-sm font-medium tracking-wider transition-colors">Join</button>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-6 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4 transition-colors">
+            <p>&copy; 2026 Lumière Beauty. All rights reserved.</p>
+
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

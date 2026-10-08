@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .animate-image-zoom {
+        animation: zoom 20s infinite alternate linear;
+    }
+    
+    .animate-fade-up {
+        animation: fadeUp 1s ease-out forwards;
+    }
+}
+
+@keyframes zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Global Hover Effects for CTAs and Social Media Icons */
+button, 
+a.px-8, 
+a.px-12, 
+a.px-6, 
+a.w-full.py-4 {
+    transition: transform 0.3s ease, background-color 0.3s ease, opacity 0.3s ease;
+}
+
+button:hover:not(.theme-toggle):not([aria-label="Back to top"]), 
+a.px-8:hover, 
+a.px-12:hover, 
+a.px-6:hover, 
+a.w-full.py-4:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Social Media Icons Lift Effect */
+footer a[aria-label] {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.3s ease;
+}
+
+footer a[aria-label]:hover {
+    transform: translateY(-4px) scale(1.15);
+}
